@@ -8,7 +8,7 @@ Esse projeto foi desenvolvido com HTML e CSS.
 
 To start the project, just open the file `inicio.html` in your preferred browser...
 
-To open the project right now, click on the link: https://github.com/Jessjca/formando-dev
+To open the project right now, click on the link: https://github.com/Jessjca/formando-devs
 
 --- 
 
