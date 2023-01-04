@@ -12,6 +12,7 @@
   --hover-orange: hsl(342, 39%, 38%);
   --primary-purple: hsl(330, 58%, 44%);
   --primary-grey: hsl(0, 0%, 61%);
+  --rosinha: hsl(352, 85%, 63%);
     
   --luminous-white: hsl(0, 0%, 97%);
 
@@ -245,6 +246,22 @@ body.menu-expanded .menu {
   margin-top: 4.8rem;
   margin-bottom: 8rem;
 }
+
+.menu .button2 {
+  background: var(--roxo);
+  border-radius: 4rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  
+  color: var(--luminous-white);
+  display: inline-block;
+  padding: 16px 32px;
+  margin-top: 4.8rem;
+  margin-bottom: 8rem;
+}
   
 .menu .button:hover {
   background-color: var(--roxo);
@@ -446,6 +463,29 @@ footer .col-b .social-links{
     border: none;
   }
   
+  nav.navigation .menu a.button2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2.4rem;
+
+    border: none;
+    border-radius: 4rem;
+
+    background-color: var(--rosinha);
+    color: var(--luminous-white);
+  
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+  }
+  
+  nav.navigation .menu a.button2:hover{
+    background-color: var(--hover-orange);
+    border: none;
+  }
+
   /*===== INICIO ===== */
   #home{
     padding-top: var(--nav-height);
