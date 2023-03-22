@@ -1,0 +1,21 @@
+{
+	// The following will hide the js and map files in the editor
+	"files.exclude": {
+		".svelte-kit": true,
+		"node_modules": true,
+		"static": true,
+		".env": true,
+		".eslintignore": true,
+		".eslintrc.cjs": true,
+		".gitignore": true,
+		".npmrc": true,
+		".prettierignore": true,
+		".prettierrc": true,
+		"package.json": true,
+		"svelte.config.js": true,
+		"tsconfig.json": true,
+		"yarn-error.log": true,
+		"yarn.lock": true,
+		".vscode": true
+	}
+}
