@@ -1,6 +1,6 @@
 body {
   font-family: "DM Sans", sans-serif;
-  text-align: inherit;
+  text-align: left;
 }
 #boxName {
   background: hsl(0, 7%, 12%);
@@ -15,6 +15,7 @@ body {
   border-radius: 8px;
   user-select: none;
   line-height: 50px;
+  text-align: left;
 }
 #boxName:hover {
   cursor: pointer;
