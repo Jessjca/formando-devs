@@ -5,6 +5,7 @@ import { FloatingButton } from './buttons/floating-button/floating-button.compon
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { DropdownSelector } from './inputs/dropdown-selector/dropdown-selector.component';
 
 
 
@@ -13,13 +14,15 @@ import { FooterComponent } from './footer/footer.component';
         FilledButton,
         FloatingButton,
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        DropdownSelector
     ],
     exports: [
         FilledButton,
         FloatingButton,
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        DropdownSelector
     ],
     imports: [
         CommonModule,

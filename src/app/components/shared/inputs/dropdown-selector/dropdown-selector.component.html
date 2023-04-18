@@ -1,0 +1,20 @@
+<div id="container" #container>
+  <div
+    id="boxName"
+    (click)="isOpen = !isOpen"
+    style="color: {{
+      isOpen ? 'var(--luminous-white)' : 'rgba(166, 166, 166, 0.7)'
+    }}"
+  >
+    {{ selected }}
+  </div>
+  <div id="selectBox" *ngIf="isOpen">
+    <div
+      *ngFor="let option of options"
+      class="item"
+      (click)="handleItemClick(option)"
+    >
+      {{ option.name }}
+    </div>
+  </div>
+</div>
