@@ -1,0 +1,105 @@
+body {
+  font-family: "Poppins", sans-serif;
+  text-align: inherit;
+}
+#container {
+  display: flex;
+  background: hsl(30, 11%, 15%);
+  color: white;
+  font-weight: 500;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+#infos {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  color: hsl(58, 81%, 87%);
+  font-size: 5.2rem;
+  margin-bottom: 4rem;
+  margin-top: 0;
+  text-align: center;
+}
+.alternative {
+  margin-top: 0rem;
+}
+.alternative span {
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+.alternative span::after {
+  left: 50px;
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100px;
+  bottom: 50%;
+  right: 50px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.alternative span::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100px;
+  bottom: 50%;
+  right: 50px;
+  background: rgba(255, 255, 255, 0.3);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form label {
+  display: flex;
+  flex-direction: column;
+}
+label span {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+}
+form input {
+  background: hsl(0, 7%, 12%);
+  width: 500px;
+  height: 50px;
+  padding: 0 0.5rem;
+  margin-top: 1rem;
+  outline: none;
+  color: rgba(166, 166, 166);
+  font-size: 1.8rem;
+  border: 1px solid #040b18;
+  border-radius: 8px;
+}
+.filledBtnContainer {
+  margin-top: 6rem;
+}
+
+.images img {
+  max-width: 100%;
+  z-index: 3;
+}
+.images {
+  width: 50vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 2.5rem;
+}
+.images .circle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #f0e0db, #f79492);
+  clip-path: circle(40% at right 80%);
+  z-index: 2;
+}

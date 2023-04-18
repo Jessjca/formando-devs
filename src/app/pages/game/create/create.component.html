@@ -1,0 +1,41 @@
+<div id="container">
+  <div id="infos">
+    <h1>Crie sua planning</h1>
+
+    <div class="alternative">
+      <span>♣</span>
+    </div>
+
+    <form [formGroup]="gameData">
+      <label for="tst1">
+        <span>Sistema de votação</span>
+        <dropdown-selector
+          [options]="[
+            { name: 'Fibonacci', value: 'fibonacci' },
+            { name: 'Fibonacci', value: 'fibonacci' },
+            { name: 'Fibonacci', value: 'fibonacci' }
+          ]"
+          formControlName="votingMethod"
+        ></dropdown-selector>
+      </label>
+
+      <label for="name">
+        <span>Usuário</span>
+        <input type="text" formControlName="userName" />
+      </label>
+      <div class="filledBtnContainer" (click)="CreateGame()">
+        <filled-button
+          style="pointer-events: none"
+          hoverColor="--outro-rosa"
+          href=""
+          color="--bg-grey"
+          >Crie uma nova planning</filled-button
+        >
+      </div>
+    </form>
+  </div>
+  <div class="images">
+    <img src="/assets/banner.png" alt="Mobile" />
+    <div class="circle"></div>
+  </div>
+</div>
