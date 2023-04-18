@@ -1,0 +1,30 @@
+#container {
+  padding-block: 2rem;
+  background-color: var(--rosa-footer);
+  text-align: left;
+  color: var(--luminous-white);
+
+  #wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 62rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo img {
+    width: 67%;
+    max-width: 100%;
+  }
+  .logo {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .col-b .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 3rem;
+    margin-top: 3rem;
+    list-style-type: none;
+  }
+}
