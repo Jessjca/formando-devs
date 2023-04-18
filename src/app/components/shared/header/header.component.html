@@ -1,0 +1,25 @@
+<div id="container">
+  <div id="wrapper">
+    <a class="logo" href="#home">
+      <img src="/assets/logo.png" alt="saint-marie-logo" />
+    </a>
+    <div id="menu">
+      <ul>
+        <li *ngFor="let content of GetHollowButtons()">
+          <floating-button
+            href="{{ content.href }}"
+            [fragment]="content.fragment"
+            >{{ content.name }}</floating-button
+          >
+        </li>
+      </ul>
+
+      <filled-button
+        *ngFor="let content of GetFilledButtons()"
+        [hoverColor]="content.color!"
+        [href]="content.href!"
+        >{{ content.name }}</filled-button
+      >
+    </div>
+  </div>
+</div>

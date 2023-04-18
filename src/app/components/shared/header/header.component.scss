@@ -1,0 +1,53 @@
+$primary-orange: hsl(342, 40%, 18%);
+$roxo: hsl(41, 84%, 82%);
+$rosa-footer: hsl(353, 81%, 75%);
+$outro-rosa: #f6b6c0;
+$active-outro-rosa: #f390a9;
+$hover-orange: hsl(342, 39%, 38%);
+$primary-purple: hsl(330, 58%, 44%);
+$primary-grey: hsl(0, 0%, 61%);
+$rosinha: hsl(352, 85%, 63%);
+$luminous-white: hsl(0, 0%, 97%);
+$gameBoxPrimary: #f1e7db;
+$gameBoxSecondary: #ffe4c4;
+$bg-grey: hsl(30, 11%, 15%);
+$bg-black: hsl(0, 7%, 12%);
+
+$nav-height: 7.2rem;
+
+#container {
+  display: flex;
+  height: $nav-height;
+  border-bottom: 0.3rem solid $roxo;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  margin: auto;
+  background: $rosa-footer;
+  z-index: 100;
+
+  #wrapper {
+    width: min(105rem, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+  }
+
+  #menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65%;
+  }
+  .logo img {
+    width: 67%;
+  }
+  #menu ul {
+    display: flex;
+    gap: 3.2rem;
+    text-transform: uppercase;
+    list-style-type: none;
+  }
+}
