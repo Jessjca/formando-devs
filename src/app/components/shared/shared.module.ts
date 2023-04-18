@@ -4,6 +4,7 @@ import { FilledButton } from './buttons/filled-button/filled-button.component';
 import { FloatingButton } from './buttons/floating-button/floating-button.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -11,12 +12,14 @@ import { HeaderComponent } from './header/header.component';
     declarations: [
         FilledButton,
         FloatingButton,
-        HeaderComponent
+        HeaderComponent,
+        FooterComponent
     ],
     exports: [
         FilledButton,
         FloatingButton,
-        HeaderComponent
+        HeaderComponent,
+        FooterComponent
     ],
     imports: [
         CommonModule,
