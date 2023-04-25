@@ -31,16 +31,20 @@ export class CreateComponent implements OnInit {
     }
 
     async CreateGame() {
-        await this.http.post<ICreateGameReturn>('http://localhost:3000/api/game/createGame', {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
+        await this.http.post<ICreateGameReturn>('http://localhost:3000/api/game/createGame',
+             JSON.stringify({
                 votingMethod: this.gameData.value.votingMethod,
                 userName: this.gameData.value.userName
-            })
-        }).subscribe(data => {
+             }),
+
+             {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+             }
+
+        ).subscribe(data => {
             this.router.navigate(['/game/' + data.game])
         })
 
