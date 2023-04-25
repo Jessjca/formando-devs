@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div *ngIf="gameController.gameInfos; else requestUser">
+  <div
+    style="
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 10rem;
+    "
+  >
+    <div *ngIf="gameController.gameInfos.status !== gameStatus.AwaitingPlayers">
+      <app-ownergamebox
+        [gameController]="gameController"
+        *ngIf="IsOwner(); else gameBox"
+      ></app-ownergamebox>
+      <ng-template #gameBox
+        ><app-gamebox [gameController]="gameController"></app-gamebox
+      ></ng-template>
+    </div>
+    <owner-playerbox
+      *ngIf="IsOwner(); else playerBox"
+      [gameController]="gameController"
+    ></owner-playerbox>
+    <ng-template #playerBox
+      ><app-playerbox [gameController]="gameController"></app-playerbox
+    ></ng-template>
+  </div>
+</div>
+<ng-template #requestUser>
+  <app-username-selector
+    [gameController]="gameController"
+    [uuid]="uuid"
+  ></app-username-selector>
+</ng-template>

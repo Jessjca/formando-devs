@@ -1,0 +1,21 @@
+.whiteBox {
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+
+  div {
+    width: 100%;
+    font-size: 1.2vw;
+    text-align: center;
+    margin: 2rem auto;
+    font-weight: 500;
+  }
+}
+.whiteBox:hover {
+  background-color: rgb(219, 219, 219);
+}

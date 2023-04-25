@@ -1,0 +1,39 @@
+<div style="width: 25vw; margin-left: 2vw; height: 85vh; position: relative">
+  <app-yellowbox>
+    <app-yellowseparator
+      ><h1
+        *ngIf="
+          gameController.gameInfos?.status === gameStatus.AwaitingPlayers;
+          else StatusTitle
+        "
+      >
+        Aguardando Jogadores
+      </h1>
+      <ng-template #StatusTitle>
+        Inicie uma nova rodada
+      </ng-template></app-yellowseparator
+    >
+    <h2>Jogadores:</h2>
+    <div id="playersDiv">
+      <p *ngFor="let player of gameController.gameInfos?.players">
+        <i class="fa-solid fa-user"></i>
+        {{ player.userName }}
+        <i *ngIf="player.owner" class="fa-solid fa-crown"></i>
+      </p>
+    </div>
+    <div id="buttonsContent">
+      <!-- <ng-template
+        *ngIf="gameController.gameInfos?.status !== gameStatus.AwaitingPlayers"
+      >
+        <br />
+      </ng-template> -->
+      <app-game-cronometer
+        *ngIf="gameController.gameInfos?.status !== gameStatus.AwaitingPlayers"
+        [gameController]="gameController"
+        [percentage]="gameController.userInfos.width"
+      ></app-game-cronometer>
+      <share-button></share-button>
+      <div style="margin-left: 3%; margin-top: 1vw"></div>
+    </div>
+  </app-yellowbox>
+</div>

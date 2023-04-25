@@ -1,0 +1,13 @@
+<ng-container *ngIf="show">
+  <div class="modal">
+    <form (submit)="UpdateTopic()">
+      <input
+        type="text"
+        placeholder="Tópico"
+        [(ngModel)]="topic"
+        name="topic"
+      />
+    </form>
+  </div>
+  <div (click)="toggle()" class="overlay"></div>
+</ng-container>

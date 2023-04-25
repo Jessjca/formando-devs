@@ -1,0 +1,51 @@
+<app-game-topic-modal [gameController]="gameController" #modal></app-game-topic-modal>
+<div style="width:60vw;margin-right:2vw;height: 85vh;position: relative;">
+<app-yellowbox>
+  <app-yellowseparator>
+    <div style="display:flex;justify-content:space-around;align-items:center;">
+    <h1>
+      <div
+        *ngIf="
+          gameController.gameInfos?.actualTopic === undefined;
+          else gameTopic
+        "
+      >
+        Tópico da rodada
+      </div>
+      <ng-template #gameTopic>{{
+        gameController.gameInfos?.actualTopic
+      }}</ng-template>
+    </h1>
+    <app-game-button (click)="modal.toggle()" >Atualizar Tópico</app-game-button>
+  </div>
+  </app-yellowseparator>
+
+  <div *ngIf="gameController.userInfos.roundRunning">
+    <p><b>SELECIONE SEU VOTO:</b></p>
+    <div
+      style="display: flex; flex-wrap: wrap; gap: 1vw; justify-content: center"
+    >
+      <div *ngFor="let card of gameController.gameInfos?.cards">
+        <app-card
+                width="9vw"
+                [fontSize]="1"
+                [number]="card.toString()"
+            />
+      </div>
+    </div>
+  </div>
+
+
+<div *ngIf="gameController.gameInfos?.status === gameStatus.ShowResults">
+  <p><b>RESULTADOS:</b></p>
+  <div style="display:flex;justify-content:center;">
+    <app-results [gameController]="gameController" />
+  </div>
+</div>
+<app-yellowseparator *ngIf="gameController.gameInfos?.actualVotes!.length > 0" style="position:absolute;bottom:0;padding-left:1.5vw;">
+  <p><b>RESULTADOS INDIVIDUAIS:</b></p>
+					<p *ngFor="let vote of gameController.gameInfos?.actualVotes"><i class="fa-solid fa-user"></i> {{ vote.userName }} votou {{ vote.value }}</p>
+</app-yellowseparator>
+
+</app-yellowbox>
+</div>

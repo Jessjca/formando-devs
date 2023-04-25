@@ -1,0 +1,7 @@
+<div
+  style="background-color:var({{ isHovering ? hoverColor : color }})"
+  (mouseover)="isHovering = true"
+  (mouseout)="isHovering = false"
+>
+  <ng-content></ng-content>
+</div>
