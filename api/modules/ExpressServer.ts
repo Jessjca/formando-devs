@@ -15,6 +15,7 @@ export default class ExpressServer {
         this.route = Router()
         this.AddControllers()
         this.app.use('/api', this.route)
+        //this.app.listen(3000)
     }
 
     AddControllers() {
