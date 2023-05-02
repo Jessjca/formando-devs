@@ -35,13 +35,16 @@ export default class GameClass {
         }
     }
 
-    private sequence(num: number): number[] {
+    private sequence(num: number): string[] {
         let res = []
         let i = 0
         while (i < num) {
             i++
-            res.push(i)
+            res.push(i.toString())
         }
+        res.push("?")
+        // res.push("☕")
+        res.push("∞")
         return res
     }
 
@@ -49,15 +52,15 @@ export default class GameClass {
         // x is representing the first term,
         // y is representing the second term, and
         // z is representing the sum of x and y.
-        var answer = [];
+        var answer: string[] = [];
         var x = 0;
         var y = 1;
         var z;
 
         // Since, the first two elements are fixed.
         // Storing the first two terms.
-        answer.push(x);
-        answer.push(y);
+        answer.push(x.toString());
+        // answer.push(y.toString());
 
         var i = 2;
         while (i < num) {
@@ -66,9 +69,12 @@ export default class GameClass {
             y = z;
 
             // Storing the current element
-            answer.push(z);
+            answer.push(z.toString());
             i = i + 1;
         }
+        answer.push("?")
+        // answer.push("☕")
+        answer.push("∞")
         return answer;
     }
 }

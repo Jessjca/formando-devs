@@ -80,8 +80,8 @@ export default class WebSocketsEvents {
     private async SelectCard(data: { values: { uuid: string, userName: string, card: string }, status: GameRequest }, ws: Socket) {
         const game = await this.GetGame(data.values.uuid)
 
-        game.infos.actualVotes.push({ id: ws.id, value: data.values.card, userName: data.values.userName })
-        if (game.infos.actualVotes.length === game.infos.players.length - 1) {
+        game.infos.actualVotes.push({ id: ws.id, value: data.values.card, userName: game.infos.players.find(player=>player.id === ws.id) !.userName })
+        if (game.infos.actualVotes.length === game.infos.players.length) {
             game.ChangeStatus(GameStatus.RoundEnded)
             this.EmitGameUpdateAllPlayers(game)
             return
@@ -94,6 +94,11 @@ export default class WebSocketsEvents {
     private async EndRound(data: { values: { uuid: string, userName: string }, status: GameRequest }, ws: Socket) {
         const game = await this.GetGame(data.values.uuid)
         await game.ChangeStatus(GameStatus.RoundEnded)
+        await game.infos.players.forEach((player, i) => {
+            if (game.infos.actualVotes.filter(vote => vote.id === player.id).length === 0) {
+                game.infos.actualVotes.push({ id: player.id, userName: player.userName, value: '?' })
+            }
+        })
         this.EmitGameUpdateAllPlayers(game)
         return
     }

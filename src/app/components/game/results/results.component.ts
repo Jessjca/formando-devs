@@ -27,10 +27,11 @@ export class ResultsComponent implements OnInit {
     return Number(character)
   }
 
-  GetValue(number: number): string {
-    if (number < -100) {
+ GetValue(number: number): string {
+     /*if (number < -100) {
       return "☕"
-    }
+    }*/         // TODO: Ajustar a opção de café
+
     if (number > 100) {
       return "∞"
     }

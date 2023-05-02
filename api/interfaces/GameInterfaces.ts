@@ -16,7 +16,7 @@ export interface IGameInfos {
     status: number;
     votingMethod: string;
     players: IPlayer[];
-    cards: number[];
+    cards: string[];
     actualTopic: string | undefined;
     actualVotes: IVotes[];
     rounds: IRounds[]
