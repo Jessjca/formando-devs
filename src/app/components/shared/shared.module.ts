@@ -9,14 +9,14 @@ import { DropdownSelector } from './inputs/dropdown-selector/dropdown-selector.c
 import { GameButton } from './buttons/game-button/game-button.component';
 import { GameCronometer } from './buttons/game-cronometer/game-cronometer.component';
 import { ShareButton } from './buttons/share-button/share-button.component';
-import { GameTopicModal } from './modals/game-topic-modal/game-topic-modal.component';
 import { FormsModule } from '@angular/forms';
-
+import { FilledButtonNoHref } from './buttons/filled-button-no-href/filled-button-no-href.component';
 
 
 @NgModule({
     declarations: [
         FilledButton,
+        FilledButtonNoHref,
         FloatingButton,
         GameButton,
         GameCronometer,
@@ -24,10 +24,10 @@ import { FormsModule } from '@angular/forms';
         HeaderComponent,
         FooterComponent,
         DropdownSelector,
-        GameTopicModal
     ],
     exports: [
         FilledButton,
+        FilledButtonNoHref,
         FloatingButton,
         GameButton,
         GameCronometer,
@@ -35,12 +35,11 @@ import { FormsModule } from '@angular/forms';
         HeaderComponent,
         FooterComponent,
         DropdownSelector,
-        GameTopicModal
     ],
     imports: [
         CommonModule,
         RouterModule,
-        FormsModule
+        FormsModule,
     ]
 })
 export class SharedModule { }

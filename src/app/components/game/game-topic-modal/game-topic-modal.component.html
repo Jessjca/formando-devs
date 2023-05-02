@@ -1,0 +1,22 @@
+<ng-container *ngIf="show">
+  <app-yellowbox id="modalContainer"
+    ><app-yellowseparator><h1>Escolha um tópico</h1></app-yellowseparator>
+    <form (submit)="UpdateTopic()">
+      <input
+        type="text"
+        placeholder="Tópico"
+        [(ngModel)]="topic"
+        name="topic"
+      />
+      <div style="display: flex; justify-content: center; margin-bottom: 2rem">
+        <app-game-button
+          (click)="UpdateTopic()"
+          color="--rosinha"
+          hoverColor="--outro-rosa"
+          >Atualizar</app-game-button
+        >
+      </div>
+    </form>
+  </app-yellowbox>
+  <div (click)="toggle()" class="overlay"></div>
+</ng-container>

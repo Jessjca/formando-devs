@@ -1,12 +1,12 @@
 <app-header
   [content]="[
-    { type: 0, name: 'Início', href: '/' },
-    { type: 0, name: 'Sobre a plaker' },
+    { type: 0, name: 'Início', href: '/' ,fragment:ScrollAbout()},
+    { type: 0, name: 'Sobre a plaker',fragment:ScrollAbout() },
     {
       type: 1,
       name: 'CRIAR PLANNING',
       href: '/game/create',
-      color: '--primary-orange'
+      color: '--primary-orange',
     }
   ]"
 >

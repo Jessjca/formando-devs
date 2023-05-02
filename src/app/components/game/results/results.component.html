@@ -1,14 +1,26 @@
-<div style="display:flex;justify-content:space-around;gap:2vw;text-align:center;">
-	<div>
-		<app-card [fontSize]="2" [number]="lowest!.toString()" width="15vw" />
-		<h1><b>MENOR</b></h1>
-	</div>
-	<div>
-		<app-card [fontSize]="2" [number]="average!.toString()" width="15vw" />
-		<h1><b>MÉDIA</b></h1>
-	</div>
-	<div>
-		<app-card [fontSize]="2" [number]="highest!.toString()" width="15vw" />
-		<h1><b>MAIOR</b></h1>
-	</div>
+<div id="container">
+  <div>
+    <app-card
+      [fontSize]="fontSize"
+      [number]="GetValue(lowest!)"
+      [width]="width"
+    />
+    <h1><b>MENOR</b></h1>
+  </div>
+  <div>
+    <app-card
+      [fontSize]="fontSize"
+      [number]="GetValue(average!)"
+      [width]="width"
+    />
+    <h1><b>MÉDIA</b></h1>
+  </div>
+  <div>
+    <app-card
+      [fontSize]="fontSize"
+      [number]="GetValue(highest!)"
+      [width]="width"
+    />
+    <h1><b>MAIOR</b></h1>
+  </div>
 </div>

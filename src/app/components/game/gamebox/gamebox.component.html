@@ -1,42 +1,50 @@
-<div style="width:60vw;margin-right:2vw;height: 85vh;position: relative;">
-<app-yellowbox>
-    <app-yellowseparator>
-      <h1>
-        <div
-          *ngIf="
-            gameController.gameInfos?.actualTopic === undefined;
-            else gameTopic
-          "
-        >
-          Tópico da rodada
-        </div>
-        <ng-template #gameTopic>{{
-          gameController.gameInfos?.actualTopic
-        }}</ng-template>
-      </h1>
-    </app-yellowseparator>
-  
-    <div *ngIf="gameController.userInfos.roundRunning">
-      <p><b>SELECIONE SEU VOTO:</b></p>
+<app-yellowbox id="container">
+  <app-yellowseparator>
+    <h1>
       <div
-        style="display: flex; flex-wrap: wrap; gap: 1vw; justify-content: center"
+        *ngIf="
+          gameController.gameInfos?.actualTopic === undefined;
+          else gameTopic
+        "
       >
-        <div *ngFor="let card of gameController.gameInfos?.cards">
-          <app-card
-                  width="9vw"
-                  [fontSize]="1"
-                  [number]="card.toString()"
-                  (click)="gameController.SelectCard(card.toString())"
-              />
-        </div>
+        Tópico da rodada
       </div>
-    </div>
+      <ng-template #gameTopic>{{
+        gameController.gameInfos?.actualTopic
+      }}</ng-template>
+    </h1>
+  </app-yellowseparator>
 
-    <div *ngIf="gameController.gameInfos?.status === gameStatus.ShowResults">
-      <p><b>RESULTADOS:</b></p>
-      <div style="display:flex;justify-content:center;">
-        <app-results [gameController]="gameController" />
+  <div *ngIf="gameController.userInfos.roundRunning" id="desktopSelectCard">
+    <p><b>SELECIONE SEU VOTO:</b></p>
+    <div
+      style="display: flex; flex-wrap: wrap; gap: 1vw; justify-content: center"
+    >
+      <div *ngFor="let card of gameController.gameInfos?.cards">
+        <app-card
+          width="9vw"
+          [fontSize]="1"
+          [number]="card.toString()"
+          (click)="gameController.SelectCard(card)"
+        />
       </div>
     </div>
-  </app-yellowbox>
-</div>
+  </div>
+
+  <div *ngIf="gameController.gameInfos?.status === gameStatus.ShowResults">
+    <p><b>RESULTADOS:</b></p>
+    <div style="display: flex; justify-content: center">
+      <app-results [gameController]="gameController" />
+    </div>
+    <div id="separator"></div>
+    <app-yellowseparator
+      style="position: absolute; bottom: 0; left: 0; width: 100%"
+    >
+      <p><b>RESULTADOS INDIVIDUAIS:</b></p>
+      <p *ngFor="let vote of gameController.gameInfos?.actualVotes">
+        <i class="fa-solid fa-user"></i> {{ vote.userName }} votou
+        {{ vote.value }}
+      </p>
+    </app-yellowseparator>
+  </div>
+</app-yellowbox>

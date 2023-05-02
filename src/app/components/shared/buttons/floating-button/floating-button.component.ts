@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
     selector: 'floating-button',
@@ -7,12 +7,5 @@ import { Component, ElementRef, Input } from '@angular/core';
 export class FloatingButton {
     @Input('href')
     href: string = ''
-    @Input('fragment')
-    fragment?: ElementRef
-
-    Scroll() {
-        if (this.fragment) {
-            console.log(this.fragment!.nativeElement)
-        }
-    }
+    @Output() click = new EventEmitter();
 }

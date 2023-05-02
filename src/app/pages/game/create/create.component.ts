@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 
 interface ICreateGameReturn {
     game: string;
@@ -32,17 +31,17 @@ export class CreateComponent implements OnInit {
 
     async CreateGame() {
         await this.http.post<ICreateGameReturn>('http://localhost:3000/api/game/createGame',
-             JSON.stringify({
+            JSON.stringify({
                 votingMethod: this.gameData.value.votingMethod,
                 userName: this.gameData.value.userName
-             }),
+            }),
 
-             {
+            {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-             }
+            }
 
         ).subscribe(data => {
             this.router.navigate(['/game/' + data.game])

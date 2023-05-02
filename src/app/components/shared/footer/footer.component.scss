@@ -1,4 +1,5 @@
 #container {
+  width: 100%;
   padding-block: 2rem;
   background-color: var(--rosa-footer);
   text-align: left;
@@ -7,9 +8,8 @@
   #wrapper {
     display: flex;
     flex-direction: row;
-    gap: 62rem;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
   .logo img {
     width: 67%;

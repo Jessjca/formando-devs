@@ -10,7 +10,7 @@ interface ISelectorOptions {
 
 @Component({
     templateUrl: './game-room.component.html',
-    //styleUrls: ['./game-room.component.scss'],
+    styleUrls: ['./game-room.component.scss'],
 })
 
 export class GameRoomComponent implements OnInit {

@@ -15,6 +15,24 @@ $bg-black: hsl(0, 7%, 12%);
 
 $nav-height: 7.2rem;
 
+#horizontalMenu {
+  position: fixed;
+  top: $nav-height;
+  width: 100%;
+  background-color: var(--rosa-footer);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  gap: 20px;
+
+  ul {
+    gap: 20px;
+    list-style-type: none;
+  }
+}
+
 #container {
   display: flex;
   height: $nav-height;
@@ -33,6 +51,13 @@ $nav-height: 7.2rem;
     justify-content: space-between;
     margin-inline: auto;
     padding-inline: 2.4rem;
+
+    i {
+      color: var(--bg-grey);
+      font-size: 26pt;
+      cursor: pointer;
+      display: none;
+    }
   }
 
   #menu {
@@ -49,5 +74,17 @@ $nav-height: 7.2rem;
     gap: 3.2rem;
     text-transform: uppercase;
     list-style-type: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  #container {
+    #wrapper {
+      i {
+        display: block;
+      }
+    }
+    #menu {
+      display: none;
+    }
   }
 }

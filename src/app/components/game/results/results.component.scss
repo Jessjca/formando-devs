@@ -1,0 +1,11 @@
+#container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2vw;
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  #container {
+    flex-wrap: wrap;
+  }
+}

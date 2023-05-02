@@ -7,29 +7,21 @@
     </div>
 
     <form [formGroup]="gameData">
-      <label for="tst1">
-        <span>Sistema de votação</span>
-        <dropdown-selector
-          [options]="[
-            { name: 'Fibonacci', value: 'fibonacci' },
-            { name: 'Fibonacci', value: 'fibonacci' },
-            { name: 'Fibonacci', value: 'fibonacci' }
-          ]"
-          formControlName="votingMethod"
-        ></dropdown-selector>
-      </label>
+      <span>Sistema de votação</span>
+      <dropdown-selector
+        class="dropdown"
+        [options]="[
+          { name: 'Fibonacci', value: 'fibonacci' },
+          { name: 'Sequência', value: 'sequencia' }
+        ]"
+        formControlName="votingMethod"
+      ></dropdown-selector>
 
-      <label for="name">
-        <span>Usuário</span>
-        <input type="text" formControlName="userName" />
-      </label>
+      <span>Usuário</span>
+      <input type="text" formControlName="userName" />
       <div class="filledBtnContainer" (click)="CreateGame()">
-        <filled-button
-          style="pointer-events: none"
-          hoverColor="--outro-rosa"
-          href=""
-          color="--bg-grey"
-          >Crie uma nova planning</filled-button
+        <filled-button-no-href hoverColor="--outro-rosa" color="--bg-grey"
+          >Crie uma nova planning</filled-button-no-href
         >
       </div>
     </form>

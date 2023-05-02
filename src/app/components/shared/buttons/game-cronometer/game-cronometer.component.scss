@@ -1,9 +1,23 @@
 .whiteBox {
   background-color: white;
-  border-radius: 15px;
+  border-radius: 1vw;
   display: flex;
   padding: 0 20px;
   align-items: center;
   transition: all 0.2s;
   position: relative;
+
+  #textDiv {
+    width: 60%;
+    font-size: 1vw;
+    text-align: center;
+    margin: 10px auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  .whiteBox {
+    #textDiv {
+      font-size: 4vw;
+    }
+  }
 }

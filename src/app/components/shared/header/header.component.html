@@ -8,7 +8,7 @@
         <li *ngFor="let content of GetHollowButtons()">
           <floating-button
             href="{{ content.href }}"
-            [fragment]="content.fragment"
+            (click)="(content?.fragment)"
             >{{ content.name }}</floating-button
           >
         </li>
@@ -21,5 +21,27 @@
         >{{ content.name }}</filled-button
       >
     </div>
+    <i class="fa-solid fa-bars" (click)="ShowBarMenu()"></i>
   </div>
+</div>
+<div
+  id="horizontalMenu"
+  [style.display]="isHorizontalMenuOpen ? 'flex' : 'none'"
+>
+  <ul>
+    <li *ngFor="let content of GetHollowButtons()">
+      <floating-button
+        href="{{ content.href }}"
+        (click)="(content?.fragment)"
+        >{{ content.name }}</floating-button
+      >
+    </li>
+  </ul>
+
+  <filled-button
+    *ngFor="let content of GetFilledButtons()"
+    [hoverColor]="content.color!"
+    [href]="content.href!"
+    >{{ content.name }}</filled-button
+  >
 </div>

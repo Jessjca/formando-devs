@@ -1,6 +1,6 @@
 .whiteBox {
   background-color: white;
-  border-radius: 15px;
+  border-radius: 1vw;
   display: flex;
   padding: 0 20px;
   align-items: center;
@@ -18,4 +18,11 @@
 }
 .whiteBox:hover {
   background-color: rgb(219, 219, 219);
+}
+@media screen and (max-width: 800px) {
+  .whiteBox {
+    div {
+      font-size: 5vw;
+    }
+  }
 }

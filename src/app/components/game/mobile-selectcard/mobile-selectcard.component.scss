@@ -1,0 +1,20 @@
+#container {
+  margin: 80px auto;
+  width: 100%;
+}
+#cardContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px 0;
+
+  i {
+    font-size: 12vw;
+    color: var(--bg-grey);
+    cursor: pointer;
+  }
+}
+p {
+  color: var(--luminous-white);
+  font-size: 5vw;
+}

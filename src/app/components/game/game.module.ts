@@ -16,6 +16,8 @@ import { GameboxComponent } from './gamebox/gamebox.component';
 import { SharedModule } from '../shared/shared.module';
 import { GameRoutingModule } from 'src/app/pages/game/game-routing.module';
 import { CreateComponent } from 'src/app/pages/game/create/create.component';
+import { MobileSelectCardComponent } from './mobile-selectcard/mobile-selectcard.component';
+import { GameTopicModal } from './game-topic-modal/game-topic-modal.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +32,9 @@ import { CreateComponent } from 'src/app/pages/game/create/create.component';
         ResultsComponent,
         UsernameSelectorComponent,
         PlayerboxComponent,
-        GameboxComponent
+        GameboxComponent,
+        MobileSelectCardComponent,
+        GameTopicModal,
     ],
     imports: [
         CommonModule,
@@ -40,5 +44,9 @@ import { CreateComponent } from 'src/app/pages/game/create/create.component';
         HttpClientModule,
         FormsModule
     ],
+    exports: [
+        YellowboxComponent,
+        YellowseparatorComponent
+    ]
 })
 export class GameModule { }

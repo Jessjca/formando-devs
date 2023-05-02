@@ -7,7 +7,7 @@
   aspect-ratio: 0.7;
 
   background: #330d43;
-  border-radius: 15px;
+  border-radius: 0.65vw;
   user-select: none;
   transition: all 0.2s;
 }
@@ -23,7 +23,7 @@
   height: 95%;
 
   background: #f7f2d7;
-  border-radius: 15px;
+  border-radius: 0.65vw;
 }
 #pinkRec {
   position: relative;
@@ -31,7 +31,7 @@
   height: 95%;
 
   background: #f38c98;
-  border-radius: 15px;
+  border-radius: 0.65vw;
   display: flex;
   justify-content: center;
   align-items: center;

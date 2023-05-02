@@ -1,6 +1,11 @@
 div {
   border-radius: 5px;
   padding: 10px;
-  font-size: 1.2vw;
+  font-size: 1.8vw;
   cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  div {
+    font-size: 6vw;
+  }
 }

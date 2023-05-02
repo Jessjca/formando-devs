@@ -1,15 +1,15 @@
-<a [routerLink]="href" (click)="Scroll()"><ng-content /></a>
+<a (click)="click.emit()"><ng-content /></a>
 
 <style lang="scss">
-    a {
-		color: hsl(0, 0%, 97%);
-		transition-duration: 0.2s;
-		text-decoration: none;
-		text-transform: uppercase;
-		line-height: 3.1rem;
-		cursor: pointer;
-	}
-	a:hover {
-		color: hsl(342, 40%, 18%);
-	}
+  a {
+    color: hsl(0, 0%, 97%);
+    transition-duration: 0.2s;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 3.1rem;
+    cursor: pointer;
+  }
+  a:hover {
+    color: hsl(342, 40%, 18%);
+  }
 </style>

@@ -2,9 +2,11 @@ body {
   font-family: "DM Sans", sans-serif;
   text-align: left;
 }
+#container {
+  position: relative;
+}
 #boxName {
   background: hsl(0, 7%, 12%);
-  width: 500px;
   height: 50px;
   padding: 0 0.5rem;
   margin-top: 1rem;
@@ -23,7 +25,7 @@ body {
 #selectBox {
   position: absolute;
   background: hsl(0, 7%, 12%);
-  width: 500px;
+  width: 100%;
   overflow: hidden;
   margin-top: 0.1rem;
   outline: none;

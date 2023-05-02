@@ -6,7 +6,7 @@ interface IContent {
   href?: string;
   color?: string;
   hoverColor?: string;
-  fragment?: ElementRef;
+  fragment?: void;
 }
 
 enum ContentType {
@@ -23,11 +23,17 @@ export class HeaderComponent {
   @Input('content')
   content: IContent[] = []
 
+  isHorizontalMenuOpen = false
+
   GetHollowButtons(): IContent[] {
     return this.content.filter(content => content.type === ContentType.HollowButton)
   }
   GetFilledButtons(): IContent[] {
     return this.content.filter(content => content.type === ContentType.FilledButton)
+  }
+
+  ShowBarMenu() {
+    this.isHorizontalMenuOpen = !this.isHorizontalMenuOpen
   }
 
 }

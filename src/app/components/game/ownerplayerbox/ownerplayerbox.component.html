@@ -1,61 +1,54 @@
-<div style="width: 25vw; margin-left: 2vw; height: 85vh; position: relative">
-  <app-yellowbox>
-    <app-yellowseparator
-      ><h1
+<app-yellowbox id="container">
+  <app-yellowseparator [ngSwitch]="gameController.gameInfos?.status">
+    <h1 *ngSwitchCase="gameStatus.AwaitingPlayers">Aguardando Jogadores</h1>
+    <h1 *ngSwitchCase="gameStatus.AwaitingRound">Inicie o Round</h1>
+    <h1 *ngSwitchCase="gameStatus.RoundStarted">Aguardando Votos</h1>
+    <h1 *ngSwitchCase="gameStatus.RoundEnded">Mostre os Resultados</h1>
+    <h1 *ngSwitchCase="gameStatus.ShowResults">Inicie o Round</h1>
+  </app-yellowseparator>
+  <h2>Jogadores:</h2>
+  <div id="playersDiv">
+    <p *ngFor="let player of gameController.gameInfos?.players">
+      <i class="fa-solid fa-user"></i>
+      {{ player.userName }}
+      <i *ngIf="player.owner" class="fa-solid fa-crown"></i>
+    </p>
+  </div>
+  <div id="separator"></div>
+  <div id="buttonsContent">
+    <app-game-cronometer
+      *ngIf="gameController.gameInfos?.status !== gameStatus.AwaitingPlayers"
+      [gameController]="gameController"
+      [percentage]="gameController.userInfos.width"
+    ></app-game-cronometer>
+    <share-button></share-button>
+    <br />
+    <div style="display: flex; justify-content: center">
+      <app-game-button
         *ngIf="
-          gameController.gameInfos?.status === gameStatus.AwaitingPlayers;
-          else StatusTitle
+          gameController.gameInfos?.status === 1 &&
+          (gameController.gameInfos?.players)!.length > 1
         "
+        (click)="gameController.StartGame()"
+        >Iniciar</app-game-button
       >
-        Aguardando Jogadores
-      </h1>
-      <ng-template #StatusTitle>
-        Inicie uma nova rodada
-      </ng-template></app-yellowseparator
-    >
-    <h2>Jogadores:</h2>
-    <div id="playersDiv">
-      <p *ngFor="let player of gameController.gameInfos?.players">
-        <i class="fa-solid fa-user"></i>
-        {{ player.userName }}
-        <i *ngIf="player.owner" class="fa-solid fa-crown"></i>
-      </p>
+      <app-game-button
+        *ngIf="
+          gameController.gameInfos?.status !== 1 &&
+          gameController.gameInfos?.status === gameStatus.ShowResults
+        "
+        (click)="gameController.NewRound()"
+        >+ Nova rodada</app-game-button
+      >
+      <app-game-button
+        *ngIf="
+          gameController.gameInfos?.status !== 1 &&
+          gameController.gameInfos?.status === gameStatus.RoundEnded
+        "
+        (click)="gameController.ShowResults()"
+        >Revelar votos</app-game-button
+      >
     </div>
-    <div id="buttonsContent">
-      <app-game-cronometer
-        *ngIf="gameController.gameInfos?.status !== gameStatus.AwaitingPlayers"
-        [gameController]="gameController"
-        [percentage]="gameController.userInfos.width"
-      ></app-game-cronometer>
-      <share-button></share-button>
-      <br />
-      <div style="display: flex; justify-content: center">
-        <app-game-button
-          *ngIf="
-            gameController.gameInfos?.status === 1 &&
-            (gameController.gameInfos?.players)!.length > 1
-          "
-          (click)="gameController.StartGame()"
-          >Iniciar</app-game-button
-        >
-        <app-game-button
-          *ngIf="
-            gameController.gameInfos?.status !== 1 &&
-            gameController.gameInfos?.status === gameStatus.ShowResults
-          "
-          (click)="gameController.NewRound()"
-          >+ Nova rodada</app-game-button
-        >
-        <app-game-button
-          *ngIf="
-            gameController.gameInfos?.status !== 1 &&
-            gameController.gameInfos?.status === gameStatus.RoundEnded
-          "
-          (click)="gameController.ShowResults()"
-          >Revelar votos</app-game-button
-        >
-      </div>
-      <div style="margin-left: 3%; margin-top: 1vw"></div>
-    </div>
-  </app-yellowbox>
-</div>
+    <div style="margin-left: 3%; margin-top: 1vw"></div>
+  </div>
+</app-yellowbox>
