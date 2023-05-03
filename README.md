@@ -1,6 +1,6 @@
 # Programa Formando Devs - 2022
 
-Projeto de Desenvolvimento Web feito para o Programa Formando Devs. O programa é uma das portas de entrada par a área de Desenvolvimento, promovido pela Concert Technologies.
+Projeto de Desenvolvimento Web feito para o Programa Formando Devs. O programa é uma das portas de entrada para a vaga de Trainer em Desenvolvimento Web. Promovido pela Concert Technologies.
 
 Esse projeto foi desenvolvido com HTML, SCSS. Foi utilizado o framework Angular.
 
