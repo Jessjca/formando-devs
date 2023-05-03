@@ -17,12 +17,12 @@
 
   <div *ngIf="gameController.userInfos.roundRunning" id="desktopSelectCard">
     <p><b>SELECIONE SEU VOTO:</b></p>
-    <div
-      style="display: flex; flex-wrap: wrap; gap: 1vw; justify-content: center"
-    >
-      <div *ngFor="let card of gameController.gameInfos?.cards">
+    <div id="cardsList">
+      <div
+        *ngFor="let card of gameController.gameInfos?.cards"
+        class="app-card"
+      >
         <app-card
-          width="9vw"
           [fontSize]="1"
           [number]="card.toString()"
           (click)="gameController.SelectCard(card)"

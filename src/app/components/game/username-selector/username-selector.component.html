@@ -1,14 +1,24 @@
 <div id="container">
   <app-yellowbox id="yellowbox"
     ><app-yellowseparator><h1>Escolha seu nome</h1></app-yellowseparator>
-    <input type="text" placeholder="Nome" [(ngModel)]="userName" />
-    <div style="display: flex; justify-content: center; margin-bottom: 2rem">
-      <app-game-button
-        (click)="CreateGame()"
-        color="--rosinha"
-        hoverColor="--outro-rosa"
-        >Iniciar</app-game-button
-      >
-    </div>
+    <form (submit)="CreateGame()">
+      <input
+        type="text"
+        placeholder="Nome"
+        [(ngModel)]="userName"
+        name="userName"
+        required
+        (input)="usernameError = false"
+        [style.border]="usernameError ? 'solid 1px red' : 'solid 1px #040b18'"
+      />
+      <div style="display: flex; justify-content: center; margin-bottom: 2rem">
+        <app-game-button
+          (click)="CreateGame()"
+          color="--rosinha"
+          hoverColor="--outro-rosa"
+          >Iniciar</app-game-button
+        >
+      </div>
+    </form>
   </app-yellowbox>
 </div>

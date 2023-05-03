@@ -12,9 +12,15 @@ export class UsernameSelectorComponent {
   @Input('uuid')
   uuid!: string;
 
+  usernameError: boolean = false
+
   userName: string = ""
 
   CreateGame() {
+    if (this.userName.length < 3) {
+      this.usernameError = true
+      return
+    }
     this.gameController.CreateGame({ userName: this.userName, uuid: this.uuid })
   }
 }

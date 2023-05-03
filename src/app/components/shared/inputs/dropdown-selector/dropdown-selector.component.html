@@ -2,6 +2,7 @@
   <div
     id="boxName"
     (click)="isOpen = !isOpen"
+    [style.border]="error ? 'solid 1px red' : 'solid 1px #040b18'"
     style="color: {{
       isOpen ? 'var(--luminous-white)' : 'rgba(166, 166, 166, 0.7)'
     }}"

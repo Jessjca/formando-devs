@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { GameStatus, IGameInfos } from 'api/interfaces/GameInterfaces';
 import GameController from 'src/controllers/GameController';
+import * as Hammer from 'hammerjs';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 @Component({
   selector: 'mobile-selectcard',
@@ -12,27 +14,31 @@ export class MobileSelectCardComponent {
   gameController?: GameController;
 
   gameStatus: typeof GameStatus = GameStatus
-  actualCard: string = this.gameController?.gameInfos?.cards[0]?.toString() ? this.gameController?.gameInfos?.cards[0]?.toString() : ''
-  actualCardIdx: number = 0
+  currentCardIdx: number = 0
 
   NextCard() {
     if (this.gameController?.gameInfos?.cards) {
-      if (this.actualCardIdx === this.gameController?.gameInfos?.cards.length - 1) {
-        this.actualCardIdx = 0
+      if (this.currentCardIdx === this.gameController?.gameInfos?.cards.length - 1) {
+        this.currentCardIdx = 0
       } else {
-        this.actualCardIdx++
+        this.currentCardIdx++
       }
-      this.actualCard = this.gameController?.gameInfos?.cards[this.actualCardIdx]?.toString()
     }
   }
   PreviousCard() {
     if (this.gameController?.gameInfos?.cards) {
-      if (this.actualCardIdx === 0) {
-        this.actualCardIdx = this.gameController?.gameInfos?.cards.length - 1
+      if (this.currentCardIdx === 0) {
+        this.currentCardIdx = this.gameController?.gameInfos?.cards.length - 1
       } else {
-        this.actualCardIdx--
+        this.currentCardIdx--
       }
-      this.actualCard = this.gameController?.gameInfos?.cards[this.actualCardIdx]?.toString()
     }
+  }
+
+  GetCardNumber() {
+    if (this.gameController?.gameInfos) {
+      return this.gameController?.gameInfos?.cards[this.currentCardIdx]
+    }
+    return ''
   }
 }

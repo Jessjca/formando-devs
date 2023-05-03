@@ -4,8 +4,14 @@
   gap: 2vw;
   text-align: center;
 }
+.card-container {
+  width: 15vw;
+}
 @media screen and (max-width: 800px) {
   #container {
     flex-wrap: wrap;
+  }
+  .card-container {
+    width: 80vw;
   }
 }

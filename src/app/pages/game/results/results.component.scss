@@ -1,0 +1,46 @@
+#separator {
+  margin: 100px 0;
+}
+h1 {
+  color: var(--luminous-white);
+  font-size: 6vw;
+}
+.topics {
+  padding: 20px 0;
+  color: var(--luminous-white);
+
+  h2 {
+    text-align: left;
+    font-size: 4.5vw;
+    padding-left: 20px;
+  }
+
+  h3 {
+    font-size: 1.5vw;
+  }
+}
+
+.resultsCards {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+  font-size: 3vw;
+}
+
+.cardResult {
+  width: 16vw;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 12vw;
+  }
+  .topics {
+    h2 {
+      font-size: 6vw;
+    }
+    h3 {
+      font-size: 3vw;
+    }
+  }
+}

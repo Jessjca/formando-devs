@@ -1,26 +1,14 @@
 <div id="container">
-  <div>
-    <app-card
-      [fontSize]="fontSize"
-      [number]="GetValue(lowest!)"
-      [width]="width"
-    />
+  <div class="card-container">
+    <app-card [fontSize]="fontSize" [number]="GetValue(lowest!)" />
     <h1><b>MENOR</b></h1>
   </div>
-  <div>
-    <app-card
-      [fontSize]="fontSize"
-      [number]="GetValue(average!)"
-      [width]="width"
-    />
+  <div class="card-container">
+    <app-card [fontSize]="fontSize" [number]="GetValue(average!)" />
     <h1><b>MÉDIA</b></h1>
   </div>
-  <div>
-    <app-card
-      [fontSize]="fontSize"
-      [number]="GetValue(highest!)"
-      [width]="width"
-    />
+  <div class="card-container">
+    <app-card [fontSize]="fontSize" [number]="GetValue(highest!)" />
     <h1><b>MAIOR</b></h1>
   </div>
 </div>

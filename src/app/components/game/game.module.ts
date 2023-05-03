@@ -18,6 +18,14 @@ import { GameRoutingModule } from 'src/app/pages/game/game-routing.module';
 import { CreateComponent } from 'src/app/pages/game/create/create.component';
 import { MobileSelectCardComponent } from './mobile-selectcard/mobile-selectcard.component';
 import { GameTopicModal } from './game-topic-modal/game-topic-modal.component';
+import { ResultsPageComponent } from 'src/app/pages/game/results/results.component';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig {
+    override overrides = <any>{
+        swipe: { direction: Hammer.DIRECTION_ALL },
+    };
+}
 
 @NgModule({
     declarations: [
@@ -35,6 +43,7 @@ import { GameTopicModal } from './game-topic-modal/game-topic-modal.component';
         GameboxComponent,
         MobileSelectCardComponent,
         GameTopicModal,
+        ResultsPageComponent
     ],
     imports: [
         CommonModule,
@@ -47,6 +56,12 @@ import { GameTopicModal } from './game-topic-modal/game-topic-modal.component';
     exports: [
         YellowboxComponent,
         YellowseparatorComponent
-    ]
+    ],
+    providers: [
+        {
+            provide: HAMMER_GESTURE_CONFIG,
+            useClass: MyHammerConfig,
+        },
+    ],
 })
 export class GameModule { }

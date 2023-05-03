@@ -28,6 +28,7 @@ export class DropdownSelector implements OnInit, OnDestroy, ControlValueAccessor
         this.selected = item.name
         this.value = item.value
         this.onChange(this.value);
+        this.error = false
     }
     @ViewChild('container') container!: ElementRef<HTMLElement>;
     isOpen: boolean = false
@@ -36,6 +37,8 @@ export class DropdownSelector implements OnInit, OnDestroy, ControlValueAccessor
 
     @Input('options')
     options: ISelectorOptions[] = []
+    @Input('error')
+    error: boolean = false
 
     handleClick = (e: MouseEvent) => {
         if (!this.container.nativeElement.contains(e.target as Node)) {

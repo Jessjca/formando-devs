@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { GameStatus } from 'api/interfaces/GameInterfaces';
 import GameController from 'src/controllers/GameController';
 
@@ -13,7 +13,6 @@ export class ResultsComponent implements OnInit {
   lowest = 0
   highest = 0
   average = 0
-  width = window.innerWidth < 800 ? '80vw' : '15vw'
   fontSize = window.innerWidth < 800 ? 9 : 2
 
   NumberParser(character: string) {
@@ -27,10 +26,10 @@ export class ResultsComponent implements OnInit {
     return Number(character)
   }
 
- GetValue(number: number): string {
-     /*if (number < -100) {
-      return "☕"
-    }*/         // TODO: Ajustar a opção de café
+  GetValue(number: number): string {
+    /*if (number < -100) {
+     return "☕"
+   }*/         // TODO: Ajustar a opção de café
 
     if (number > 100) {
       return "∞"

@@ -1,5 +1,6 @@
 #container {
   overflow: hidden;
+  overflow-y: auto;
   position: relative;
   background-color: var(--gameBoxPrimary);
   border-radius: 10px;

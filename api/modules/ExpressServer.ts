@@ -2,6 +2,7 @@ import express, { Router } from 'express'
 import GameCreate from '../controllers/GameCreate';
 import cors from 'cors';
 import http from 'http'
+import GameResults from '../controllers/GameResults';
 
 export default class ExpressServer {
     private app
@@ -20,5 +21,6 @@ export default class ExpressServer {
 
     AddControllers() {
         new GameCreate(this.route)
+        new GameResults(this.route)
     }
 }

@@ -1,8 +1,31 @@
 #separator {
-  margin: 10vw 0;
+  margin: 50vw 0;
+  display: none;
+}
+.app-card {
+  width: 9vw;
+}
+#buttonTopicDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 10px;
+}
+#cardsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
+  justify-content: center;
+}
+#desktopSelectCard {
+  height: 100%;
+  position: relative;
 }
 @media screen and (max-width: 800px) {
   #desktopSelectCard {
     display: none;
+  }
+  #separator {
+    display: block;
   }
 }

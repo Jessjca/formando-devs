@@ -1,14 +1,19 @@
 <div id="container">
   <p>Selecione o seu voto:</p>
   <app-yellowbox class="yellowbox">
-    <div id="cardContent">
+    <div
+      id="cardContent"
+      (swipeleft)="PreviousCard()"
+      (swiperight)="NextCard()"
+    >
       <i class="fa-solid fa-arrow-left" (click)="PreviousCard()"></i>
-      <app-card
-        [fontSize]="9"
-        [number]="actualCard"
-        width="40vw"
-        (click)="gameController?.SelectCard(actualCard)"
-      ></app-card>
+      <div style="width: 40vw">
+        <app-card
+          [fontSize]="9"
+          [number]="GetCardNumber()"
+          (click)="gameController?.SelectCard(GetCardNumber())"
+        ></app-card>
+      </div>
       <i class="fa-solid fa-arrow-right" (click)="NextCard()"></i>
     </div>
   </app-yellowbox>

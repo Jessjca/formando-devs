@@ -20,6 +20,8 @@ export default class GameClass {
         await this.SaveData()
     }
     async SaveData() {
+        console.log("Salvando dados")
+        console.log(this.infos)
         await this.prisma.game.update({ where: { id: this.id }, data: { infos: JSON.stringify(this.infos) } })
     }
 

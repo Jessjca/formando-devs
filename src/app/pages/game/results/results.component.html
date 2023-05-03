@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div id="separator"></div>
+<h1>Resultados</h1>
+<hr />
+<div *ngFor="let round of gameRounds" class="topics">
+  <h2>{{ round.topic }}</h2>
+  <h3 *ngFor="let vote of round.votes">
+    {{ vote.userName }} votou {{ vote.value }}
+  </h3>
+  <div class="resultsCards">
+    <div class="cardResult">
+      <app-card [number]="GetLowest(round.votes)" [fontSize]="3"></app-card>
+      MENOR
+    </div>
+    <div class="cardResult">
+      <app-card [number]="GetAverage(round.votes)" [fontSize]="3"></app-card>
+      MÉDIA
+    </div>
+    <div class="cardResult">
+      <app-card [number]="GetHighest(round.votes)" [fontSize]="3"></app-card>
+      MAIOR
+    </div>
+  </div>
+  <hr style="border: var(--bg-black) solid 1px" />
+</div>

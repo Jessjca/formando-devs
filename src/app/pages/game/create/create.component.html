@@ -9,6 +9,7 @@
     <form [formGroup]="gameData">
       <span>Sistema de votação</span>
       <dropdown-selector
+        [error]="dropdownError"
         class="dropdown"
         [options]="[
           { name: 'Fibonacci', value: 'fibonacci' },
@@ -18,7 +19,13 @@
       ></dropdown-selector>
 
       <span>Usuário</span>
-      <input type="text" formControlName="userName" />
+      <input
+        type="text"
+        formControlName="userName"
+        required
+        (input)="usernameError = false"
+        [style.border]="usernameError ? 'solid 1px red' : 'solid 1px #040b18'"
+      />
       <div class="filledBtnContainer" (click)="CreateGame()">
         <filled-button-no-href hoverColor="--outro-rosa" color="--bg-grey"
           >Crie uma nova planning</filled-button-no-href

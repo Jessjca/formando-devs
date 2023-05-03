@@ -13,6 +13,8 @@ interface ICreateGameReturn {
 })
 export class CreateComponent implements OnInit {
 
+    dropdownError: boolean = false
+    usernameError: boolean = false
     gameData!: FormGroup
     private router: Router
     private http: HttpClient
@@ -30,6 +32,14 @@ export class CreateComponent implements OnInit {
     }
 
     async CreateGame() {
+        if (this.gameData.value.votingMethod === '') {
+            this.dropdownError = true
+            return
+        }
+        if (this.gameData.value.userName.length < 3) {
+            this.usernameError = true
+            return
+        }
         await this.http.post<ICreateGameReturn>('http://localhost:3000/api/game/createGame',
             JSON.stringify({
                 votingMethod: this.gameData.value.votingMethod,
