@@ -26,8 +26,6 @@ Compile o arquivo .js a partir do tsc na API:
 npx tsc
 ```
 
-ou
-
 E então, realize a migration com:
 
 ```
