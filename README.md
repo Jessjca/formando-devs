@@ -1,3 +1,9 @@
+# Programa Formando Devs - 2022
+
+Projeto de Desenvolvimento Web feito para o Programa Formando Devs. O programa é uma das portas de entrada par a área de Desenvolvimento, promovido pela Concert Technologies.
+
+Esse projeto foi desenvolvido com HTML, SCSS. Foi utilizado o framework Angular.
+
 # Como executar
 
 Após clonar o repositório, siga os seguintes passos para executar:
