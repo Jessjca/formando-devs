@@ -13,12 +13,6 @@ cd ./api/
 npm install
 ```
 
-ou
-
-```
-cd ./api/
-yarn
-```
 
 Compile o arquivo .js a partir do tsc na API:
 
@@ -27,10 +21,6 @@ npx tsc
 ```
 
 ou
-
-```
-yarn tsc
-```
 
 E então, realize a migration com:
 
