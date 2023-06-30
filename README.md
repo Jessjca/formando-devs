@@ -3,12 +3,13 @@
 Projeto de Desenvolvimento Web feito para o Programa Formando Devs. O programa é uma das portas de entrada para a vaga de Trainer em Desenvolvimento Web. Promovido pela Concert Technologies.
 
 Esse projeto foi desenvolvido com HTML, SCSS. Foi utilizado o framework Angular.
-```
+
+
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Angular.js](https://img.shields.io/badge/angular.js-%23E23237.svg?style=for-the-badge&logo=angularjs&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-```
+
 
 # Como executar
 
